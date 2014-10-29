@@ -55,8 +55,6 @@ window.ripples = {
                 mousePos  = {x: e.touches[0].clientX - elPos.left, y:  e.touches[0].clientY - elPos.top};
             }
 
-            console.log(mousePos);
-
             $ripplecache = $ripple;
 
             // Set ripple class
