@@ -110,7 +110,8 @@
             ripples.init((selector) ? selector : this.options.withRipples);
         },
         "init": function() {
-            this.ripples();
+            if (!window.rippled){ this.ripples(); }
+            window.rippled = true
             this.input();
             this.checkbox();
             this.radio();
