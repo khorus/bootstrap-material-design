@@ -36,7 +36,6 @@ window.ripples = {
         };
 
         var rippleStart = function(e, target, callback) {
-            console.debug("rippleStart", target);
 
             // Init variables
             var $rippleWrapper      = target,
@@ -151,7 +150,6 @@ window.ripples = {
         bind(["mouseover", "touchstart"], withRipple, rippleInit);
 
         // start ripple effect on mousedown
-        console.debug("binding mousedown");
         bind(["mousedown", "touchstart"], ".ripple-wrapper", function(e, $ripple) {
             // Start ripple only on left or middle mouse click and touch click
             if (e.which === 0 || e.which === 1 || e.which === 2) {
@@ -161,7 +159,6 @@ window.ripples = {
 
         // if animation ends and user is not holding mouse then destroy the ripple
         bind("rippleEnd", ".ripple-wrapper .ripple", function(e, $ripple) {
-            console.debug("rippleEnd");
             var $ripples = $ripple.parentNode.getElementsByClassName("ripple");
 
             if (!mouseDown || ( $ripples[0] == $ripple && $ripples.length > 1)) {
